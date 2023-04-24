@@ -15,7 +15,7 @@ public class BallLauncher : MonoBehaviour
     private float currentForce; // текущая сила броска
     private float currentAngle; // текущий угол броска
 
-    // Start is called before the first frame update
+  
     void Start()
     {
         currentForce = forceSlider.value * maxForce;
@@ -24,7 +24,7 @@ public class BallLauncher : MonoBehaviour
 
 
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -90,15 +90,13 @@ public class BallLauncher : MonoBehaviour
     // Запускает шарик с текущей силой и углом броска
     public void LaunchBall()
     {
-        // Rigidbody ballInstance = Instantiate(ballPrefab, launchPoint.position, Quaternion.identity);
-        // ballInstance.AddForce(CalculateLaunchVelocity(), ForceMode.Impulse);
+       
 
         Rigidbody ballInstance = Instantiate(ballPrefab, launchPoint.position, Quaternion.identity);
         ballInstance.velocity = CalculateLaunchVelocity();
     }
 
     // Рассчитывает скорость броска на основе текущей силы и угла броска
-
     private Vector3 CalculateLaunchVelocity()
     {
         float launchAngle = currentAngle * Mathf.Deg2Rad;
